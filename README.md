@@ -7,6 +7,9 @@
 FaruAI is an AI-powered digital marketing assistant that helps businesses generate marketing content quickly using Google's Gemini API.
 
 ## Features
+## 📸 Project Preview
+
+![FaruAI Dashboard](faruai-dashboard.png)
 
 - **Instagram Caption Generator** — Create captions, hashtags, and Reel ideas.
 - **Ad Copy Generator** — Generate headlines, ad text, calls to action, and audience suggestions.
