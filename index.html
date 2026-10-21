@@ -1,0 +1,544 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FaruAI | Marketing Dashboard</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1120;
+      color: #f8fafc;
+    }
+
+    header {
+      padding: 22px 7%;
+      border-bottom: 1px solid #263247;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    header span,
+    h1 span {
+      color: #60a5fa;
+    }
+
+    main {
+      max-width: 1050px;
+      margin: 45px auto;
+      padding: 20px;
+    }
+
+    .tag {
+      color: #93c5fd;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 6vw, 52px);
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: #aab8ce;
+      line-height: 1.7;
+    }
+
+    .tools {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin: 30px 0;
+    }
+
+    .tool {
+      background: #121c30;
+      color: #e2e8f0;
+      border: 1px solid #2b3b55;
+      border-radius: 12px;
+      padding: 18px 12px;
+      cursor: pointer;
+      text-align: left;
+      min-height: 120px;
+      width: 100%;
+    }
+
+    .tool strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .tool small {
+      color: #aab8ce;
+      line-height: 1.5;
+    }
+
+    .tool.active {
+      border-color: #60a5fa;
+      background: #172b49;
+      box-shadow: 0 0 0 1px #60a5fa;
+    }
+
+    .panel {
+      background: #121c30;
+      border: 1px solid #2b3b55;
+      padding: 25px;
+      border-radius: 16px;
+      margin-top: 24px;
+    }
+
+    label {
+      display: block;
+      margin: 18px 0 8px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      background: #0b1120;
+      color: white;
+      border: 1px solid #35445e;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .primary,
+    #copyBtn,
+    #clearHistoryBtn,
+    .history-button {
+      margin-top: 18px;
+      padding: 12px 14px;
+      background: #3b82f6;
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      border: 0;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .primary,
+    #copyBtn {
+      width: 100%;
+      padding: 14px;
+      font-size: 15px;
+    }
+
+    #copyBtn {
+      background: #1e293b;
+      border: 1px solid #475569;
+    }
+
+    #clearHistoryBtn {
+      background: #7f1d1d;
+    }
+
+    .history-item {
+      padding: 16px;
+      margin-top: 14px;
+      border: 1px solid #35445e;
+      border-radius: 10px;
+      overflow-wrap: anywhere;
+    }
+
+    .history-item h3 {
+      margin-top: 0;
+    }
+
+    .history-content {
+      white-space: pre-wrap;
+      line-height: 1.7;
+      color: #e2e8f0;
+    }
+
+    #result {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      line-height: 1.8;
+      color: #e2e8f0;
+    }
+
+    #status {
+      color: #93c5fd;
+      font-size: 14px;
+    }
+
+    button:hover {
+      filter: brightness(1.1);
+    }
+
+    button:disabled {
+      opacity: 0.6;
+      cursor: wait;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    @media (max-width: 750px) {
+      .tools {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      main {
+        margin-top: 25px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .tools {
+        grid-template-columns: 1fr;
+      }
+
+      .tool {
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>Faru<span>AI</span> · Marketing Dashboard</header>
+
+  <main>
+    <div class="tag">YOUR AI MARKETING WORKSPACE</div>
+
+    <h1>Market smarter.<br><span>Grow faster.</span></h1>
+
+    <p>
+      Choose a tool and create practical marketing content for your business.
+    </p>
+
+    <h2>Choose your marketing tool</h2>
+
+    <div class="tools">
+      <button class="tool active" type="button" data-goal="instagram">
+        <strong>📱 Instagram</strong>
+        <small>Captions, hashtags and Reel ideas</small>
+      </button>
+
+      <button class="tool" type="button" data-goal="ads">
+        <strong>📣 Ad Copy</strong>
+        <small>Headlines, ad text and CTA ideas</small>
+      </button>
+
+      <button class="tool" type="button" data-goal="calendar">
+        <strong>🗓️ Content Calendar</strong>
+        <small>A practical 7-day content plan</small>
+      </button>
+
+      <button class="tool" type="button" data-goal="seo">
+        <strong>🔎 SEO Assistant</strong>
+        <small>Keywords, page titles and descriptions</small>
+      </button>
+    </div>
+
+    <section class="panel">
+      <h2 id="formTitle">Instagram Caption Generator</h2>
+      <p id="formDescription">
+        Create captions, hashtags and Reel ideas.
+      </p>
+
+      <form id="marketingForm">
+        <label for="business">Business name</label>
+        <input
+          id="business"
+          placeholder="e.g. Faru Fashion"
+          required
+        >
+
+        <label for="type">Business type</label>
+        <select id="type">
+          <option>Clothing</option>
+          <option>Attar and Perfume</option>
+          <option>Restaurant</option>
+          <option>Digital Marketing</option>
+          <option>Education</option>
+          <option>Beauty and Skincare</option>
+          <option>Other Business</option>
+        </select>
+
+        <label for="details">Product or service details</label>
+        <textarea
+          id="details"
+          rows="4"
+          placeholder="Describe your product, audience, price, or offer"
+        ></textarea>
+
+        <button class="primary" id="generateBtn" type="submit">
+          Generate Content
+        </button>
+      </form>
+    </section>
+
+    <section class="panel" id="resultPanel" hidden>
+      <h2>Your AI-generated content</h2>
+      <p id="status" aria-live="polite"></p>
+      <div id="result" aria-live="polite"></div>
+      <button id="copyBtn" type="button" hidden>Copy Result</button>
+    </section>
+
+    <section class="panel" id="historyPanel">
+      <h2>📚 Chat History</h2>
+      <p>Your previously generated marketing content.</p>
+
+      <div id="historyList">
+        <p>Loading history...</p>
+      </div>
+
+      <button type="button" id="clearHistoryBtn">
+        Clear All History
+      </button>
+    </section>
+  </main>
+
+  <footer>FaruAI · AI-powered marketing assistant</footer>
+
+  <script>
+    const form = document.getElementById("marketingForm");
+    const resultPanel = document.getElementById("resultPanel");
+    const result = document.getElementById("result");
+    const status = document.getElementById("status");
+    const generateBtn = document.getElementById("generateBtn");
+    const copyBtn = document.getElementById("copyBtn");
+    const historyList = document.getElementById("historyList");
+    const clearHistoryBtn = document.getElementById("clearHistoryBtn");
+
+    let selectedGoal = "instagram";
+
+    const toolInfo = {
+      instagram: {
+        title: "Instagram Caption Generator",
+        description: "Create captions, hashtags and Reel ideas."
+      },
+      ads: {
+        title: "Ad Copy Generator",
+        description: "Create ad headlines, primary text and calls to action."
+      },
+      calendar: {
+        title: "7-Day Content Calendar",
+        description: "Plan a week of useful social media content."
+      },
+      seo: {
+        title: "SEO Assistant",
+        description: "Generate keyword ideas, page titles and meta descriptions."
+      }
+    };
+
+    function getHistory() {
+      try {
+        const saved = JSON.parse(
+          localStorage.getItem("faruai_history") || "[]"
+        );
+
+        return Array.isArray(saved) ? saved : [];
+      } catch (error) {
+        return [];
+      }
+    }
+
+    function saveToHistory(item) {
+      try {
+        const history = getHistory();
+        history.unshift(item);
+
+        localStorage.setItem(
+          "faruai_history",
+          JSON.stringify(history.slice(0, 20))
+        );
+
+        displayHistory();
+      } catch (error) {
+        status.textContent =
+          "Content generated, but browser history could not be saved.";
+      }
+    }
+
+    function displayHistory() {
+      const history = getHistory();
+      historyList.replaceChildren();
+
+      if (history.length === 0) {
+        const empty = document.createElement("p");
+        empty.textContent = "Innum saved results edhuvum illa.";
+        historyList.appendChild(empty);
+        return;
+      }
+
+      history.forEach(function(item, index) {
+        const card = document.createElement("article");
+        card.className = "history-item";
+
+        const title = document.createElement("h3");
+        title.textContent =
+          (item.business || "Business") + " — " + (item.tool || "Marketing");
+
+        const date = document.createElement("p");
+        date.textContent = item.date || "";
+
+        const preview = document.createElement("p");
+        preview.className = "history-content";
+        const content = item.content || "";
+        preview.textContent =
+          content.length > 180
+            ? content.slice(0, 180) + "..."
+            : content;
+
+        const viewButton = document.createElement("button");
+        viewButton.type = "button";
+        viewButton.className = "history-button";
+        viewButton.textContent = "View Result";
+
+        viewButton.addEventListener("click", function() {
+          resultPanel.hidden = false;
+          result.textContent = item.content || "";
+          status.textContent = "Saved result from " + (item.date || "earlier");
+          copyBtn.hidden = false;
+
+          resultPanel.scrollIntoView({ behavior: "smooth" });
+        });
+
+        const deleteButton = document.createElement("button");
+        deleteButton.type = "button";
+        deleteButton.className = "history-button";
+        deleteButton.style.background = "#7f1d1d";
+        deleteButton.style.marginLeft = "8px";
+        deleteButton.textContent = "Delete";
+
+        deleteButton.addEventListener("click", function() {
+          const updatedHistory = getHistory();
+          updatedHistory.splice(index, 1);
+
+          localStorage.setItem(
+            "faruai_history",
+            JSON.stringify(updatedHistory)
+          );
+
+          displayHistory();
+        });
+
+        card.append(title, date, preview, viewButton, deleteButton);
+        historyList.appendChild(card);
+      });
+    }
+
+    document.querySelectorAll(".tool").forEach(function(button) {
+      button.addEventListener("click", function() {
+        selectedGoal = button.dataset.goal;
+
+        document.querySelectorAll(".tool").forEach(function(item) {
+          item.classList.toggle("active", item === button);
+        });
+
+        document.getElementById("formTitle").textContent =
+          toolInfo[selectedGoal].title;
+
+        document.getElementById("formDescription").textContent =
+          toolInfo[selectedGoal].description;
+      });
+    });
+
+    form.addEventListener("submit", async function(event) {
+      event.preventDefault();
+
+      const business = document.getElementById("business").value.trim();
+      const type = document.getElementById("type").value;
+      const details = document.getElementById("details").value.trim();
+
+      resultPanel.hidden = false;
+      result.textContent = "";
+      status.textContent = "FaruAI is generating your content...";
+      copyBtn.hidden = true;
+      copyBtn.textContent = "Copy Result";
+      generateBtn.disabled = true;
+      generateBtn.textContent = "Generating...";
+
+      try {
+        const response = await fetch("/api/generate", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            business: business,
+            type: type,
+            goal: selectedGoal,
+            details: details
+          })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.error || "Unable to generate content.");
+        }
+
+        const generatedContent =
+          data.result || "No content was returned.";
+
+        result.textContent = generatedContent;
+        status.textContent = "Content generated successfully.";
+        copyBtn.hidden = false;
+
+        saveToHistory({
+          business: business,
+          tool: toolInfo[selectedGoal].title,
+          date: new Date().toLocaleString(),
+          content: generatedContent
+        });
+
+      } catch (error) {
+        result.textContent = error.message;
+        status.textContent = "Generation failed. Please try again.";
+      } finally {
+        generateBtn.disabled = false;
+        generateBtn.textContent = "Generate Content";
+      }
+    });
+
+    copyBtn.addEventListener("click", async function() {
+      try {
+        await navigator.clipboard.writeText(result.textContent);
+        copyBtn.textContent = "Copied Successfully!";
+      } catch (error) {
+        status.textContent =
+          "Copy failed. Please select the result text and copy it manually.";
+      }
+    });
+
+    clearHistoryBtn.addEventListener("click", function() {
+      if (confirm("History ellathayum delete pannava?")) {
+        localStorage.removeItem("faruai_history");
+        displayHistory();
+      }
+    });
+
+    displayHistory();
+  </script>
+</body>
+</html>
