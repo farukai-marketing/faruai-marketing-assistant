@@ -9,7 +9,7 @@ FaruAI is an AI-powered digital marketing assistant that helps businesses genera
 ## Features
 ## 📸 Project Preview
 
-![FaruAI Dashboard](faruai-dashboard.png)
+![FaruAI Dashboard](Screenshot(74).png)
 
 - **Instagram Caption Generator** — Create captions, hashtags, and Reel ideas.
 - **Ad Copy Generator** — Generate headlines, ad text, calls to action, and audience suggestions.
