@@ -1,5 +1,8 @@
 
 # FaruAI — AI Marketing Assistant
+## 🚀 Live Demo
+
+[Open FaruAI Website](https://faruai-marketing-assistant.onrender.com)
 
 FaruAI is an AI-powered digital marketing assistant that helps businesses generate marketing content quickly using Google's Gemini API.
 
