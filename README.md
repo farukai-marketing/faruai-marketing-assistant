@@ -1,19 +1,18 @@
 
 # FaruAI — AI Marketing Assistant
 
-FaruAI is an AI-powered marketing assistant designed to help businesses create marketing content quickly and easily.
+FaruAI is an AI-powered digital marketing assistant that helps businesses generate marketing content quickly using Google's Gemini API.
 
 ## Features
 
-- Instagram Caption Generator
-- Ad Copy Generator
-- 7-Day Social Media Content Calendar
-- SEO Assistant
-- Chat History to save and revisit generated content
-- Copy generated content
-- Responsive dashboard design
+- **Instagram Caption Generator** — Create captions, hashtags, and Reel ideas.
+- **Ad Copy Generator** — Generate headlines, ad text, calls to action, and audience suggestions.
+- **7-Day Content Calendar** — Plan a week of social media content.
+- **SEO Assistant** — Generate keyword ideas, SEO titles, meta descriptions, and content ideas.
+- **Copy Results** — Copy generated content for reuse.
+- **Chat History** — Save and revisit previous generations.
 
-## Technologies Used
+## Tech Stack
 
 - HTML
 - CSS
@@ -22,44 +21,38 @@ FaruAI is an AI-powered marketing assistant designed to help businesses create m
 - Express.js
 - Google Gemini API
 
-## Getting Started
+## Run Locally
 
-### 1. Install dependencies
+1. Install Node.js.
+2. Clone this repository.
+3. Install dependencies:
 
-```bash
-npm install
-```
+   ```bash
+   npm install
+   ```
 
-### 2. Configure your API key
+4. Create a `.env` file in the project root:
 
-Create a `.env` file in the project root:
+   ```env
+   GEMINI_API_KEY=your_gemini_api_key
+   ```
 
-```env
-GEMINI_API_KEY=your_api_key_here
-```
+5. Start the server:
 
-Replace `your_api_key_here` with your own Gemini API key.
+   ```bash
+   npm start
+   ```
 
-**Never publish your real API key or upload your `.env` file to GitHub.**
+6. Open `http://localhost:3000` in your browser.
 
-### 3. Start the application
+## Environment Variables
 
-```bash
-npm start
-```
+- `GEMINI_API_KEY` — Your Google Gemini API key. Keep it private and never commit it to GitHub.
 
-### 4. Open the application
+## Project Purpose
 
-Visit:
+This project demonstrates an AI-assisted marketing workflow using a web interface, a Node.js backend, and the Gemini API.
 
-http://localhost:3000
+## Author
 
-## Project Status
-
-The initial version includes four AI marketing tools and browser-based chat history.
-
-More improvements, testing, and deployment are planned.
-
-## Disclaimer
-
-AI-generated marketing suggestions may require human review before publication.
+Created as a digital marketing and AI development project.
