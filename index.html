@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,10 +24,7 @@
 
     * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 25px;
-    }
+    html { scroll-behavior: smooth; scroll-padding-top: 25px; }
 
     body {
       margin: 0;
@@ -45,14 +41,10 @@
       outline: 2px solid var(--cyan);
       outline-offset: 3px;
     }
-
     button:disabled { opacity: .65; cursor: wait; }
-
     [hidden] { display: none !important; }
 
-    .app {
-      min-height: 100vh;
-    }
+    .app { min-height: 100vh; }
 
     .sidebar {
       width: 245px;
@@ -75,31 +67,12 @@
       margin-bottom: 38px;
     }
 
-    .brand-icon {
-      width: 43px;
-      height: 43px;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
-      background: linear-gradient(135deg, #2563eb, #38bdf8);
-      color: white;
-      font-size: 25px;
-      box-shadow: 0 5px 25px #2563eb35;
-    }
-
-    .brand-name {
-      font-size: 23px;
-      font-weight: 800;
-      letter-spacing: -.7px;
-    }
-
-    .brand-name span { color: var(--cyan); }
-
-    .brand small {
+    .brand-logo {
       display: block;
-      margin-top: 4px;
-      color: var(--muted);
-      font-size: 11px;
+      width: 100%;
+      max-width: 190px;
+      height: auto;
+      object-fit: contain;
     }
 
     .nav-label {
@@ -111,10 +84,7 @@
       margin: 0 0 12px;
     }
 
-    .nav {
-      display: grid;
-      gap: 7px;
-    }
+    .nav { display: grid; gap: 7px; }
 
     .nav-link {
       width: 100%;
@@ -132,10 +102,7 @@
       transition: .2s;
     }
 
-    .nav-link:hover {
-      background: #14213b;
-      color: white;
-    }
+    .nav-link:hover { background: #14213b; color: white; }
 
     .nav-link.active {
       color: white;
@@ -143,11 +110,7 @@
       border-color: #2756a8;
     }
 
-    .nav-icon {
-      width: 24px;
-      text-align: center;
-      font-size: 19px;
-    }
+    .nav-icon { width: 24px; text-align: center; font-size: 19px; }
 
     .sidebar-bottom {
       margin-top: auto;
@@ -157,28 +120,11 @@
       background: linear-gradient(145deg, #101f45, #0b142c);
     }
 
-    .sidebar-bottom .bolt {
-      font-size: 25px;
-      color: var(--cyan);
-    }
+    .sidebar-bottom .bolt { font-size: 25px; color: var(--cyan); }
+    .sidebar-bottom h3 { margin: 12px 0 7px; font-size: 14px; }
+    .sidebar-bottom p { margin: 0; color: var(--muted); line-height: 1.7; font-size: 12px; }
 
-    .sidebar-bottom h3 {
-      margin: 12px 0 7px;
-      font-size: 14px;
-    }
-
-    .sidebar-bottom p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 12px;
-    }
-
-    .workspace {
-      margin-left: 245px;
-      padding: 30px 30px 0;
-      max-width: 1800px;
-    }
+    .workspace { margin-left: 245px; padding: 30px 30px 0; max-width: 1800px; }
 
     .topbar {
       display: flex;
@@ -188,16 +134,8 @@
       margin-bottom: 28px;
     }
 
-    .topbar h1 {
-      margin: 0;
-      font-size: clamp(22px, 2.4vw, 30px);
-      letter-spacing: -.7px;
-    }
-
-    .topbar p {
-      margin: 7px 0 0;
-      color: var(--muted);
-    }
+    .topbar h1 { margin: 0; font-size: clamp(22px, 2.4vw, 30px); letter-spacing: -.7px; }
+    .topbar p { margin: 7px 0 0; color: var(--muted); }
 
     .profile {
       display: flex;
@@ -218,13 +156,15 @@
       background: #172846;
       font-size: 19px;
     }
+    .avatar-f {
+  color: #38bdf8;
+  font-weight: 800;
+  font-size: 22px;
+  background: linear-gradient(145deg, #17386d, #10224f);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+}
 
-    .eyebrow {
-      color: #7ebcff;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 2px;
-    }
+    .eyebrow { color: #7ebcff; font-size: 10px; font-weight: 800; letter-spacing: 2px; }
 
     .stats {
       display: grid;
@@ -241,12 +181,7 @@
       background: linear-gradient(145deg, #111e36, #0d172b);
     }
 
-    .stat-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-    }
+    .stat-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 
     .stat-icon {
       width: 40px;
@@ -262,24 +197,9 @@
     .stat-card:nth-child(3) .stat-icon { background: #104c50; }
     .stat-card:nth-child(4) .stat-icon { background: #60351c; }
 
-    .stat-label {
-      color: #bac9e1;
-      font-size: 12px;
-      line-height: 1.5;
-      margin-top: 15px;
-    }
-
-    .stat-value {
-      font-size: 31px;
-      font-weight: 800;
-      margin-top: 6px;
-    }
-
-    .stat-note {
-      margin-top: 7px;
-      color: var(--muted);
-      font-size: 11px;
-    }
+    .stat-label { color: #bac9e1; font-size: 12px; line-height: 1.5; margin-top: 15px; }
+    .stat-value { font-size: 31px; font-weight: 800; margin-top: 6px; }
+    .stat-note { margin-top: 7px; color: var(--muted); font-size: 11px; }
 
     .hero {
       display: grid;
@@ -320,23 +240,10 @@
       letter-spacing: -1px;
     }
 
-    .hero h2 span {
-      color: var(--cyan);
-    }
+    .hero h2 span { color: var(--cyan); }
+    .hero p { max-width: 510px; color: #b5c7e5; line-height: 1.8; margin: 0 0 20px; }
 
-    .hero p {
-      max-width: 510px;
-      color: #b5c7e5;
-      line-height: 1.8;
-      margin: 0 0 20px;
-    }
-
-    .hero-art {
-      min-height: 170px;
-      display: grid;
-      place-items: center;
-      position: relative;
-    }
+    .hero-art { min-height: 170px; display: grid; place-items: center; position: relative; }
 
     .ai-orb {
       width: 155px;
@@ -380,24 +287,10 @@
       margin-bottom: 6px;
     }
 
-    .section-heading h2,
-    .panel h2 {
-      margin: 0;
-      font-size: 20px;
-      letter-spacing: -.3px;
-    }
+    .section-heading h2, .panel h2 { margin: 0; font-size: 20px; letter-spacing: -.3px; }
+    .section-description { margin: 8px 0 20px; color: var(--muted); line-height: 1.7; }
 
-    .section-description {
-      margin: 8px 0 20px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .tools {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 13px;
-    }
+    .tools { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 13px; }
 
     .tool {
       min-width: 0;
@@ -435,17 +328,8 @@
     .tool:nth-child(3) .tool-icon { background: #10484b; }
     .tool:nth-child(4) .tool-icon { background: #61361d; }
 
-    .tool strong {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 13px;
-    }
-
-    .tool small {
-      color: #a9bad4;
-      line-height: 1.6;
-      font-size: 11px;
-    }
+    .tool strong { display: block; margin-bottom: 8px; font-size: 13px; }
+    .tool small { color: #a9bad4; line-height: 1.6; font-size: 11px; }
 
     .main-grid {
       display: grid;
@@ -501,23 +385,10 @@
 
     .primary:hover, .secondary:hover, .danger:hover { filter: brightness(1.13); }
 
-    #generateBtn {
-      width: 100%;
-      margin-top: 20px;
-      padding: 15px;
-      font-size: 14px;
-    }
+    #generateBtn { width: 100%; margin-top: 20px; padding: 15px; font-size: 14px; }
 
-    .secondary, .history-button {
-      background: #1a2a45;
-      border: 1px solid #354d70;
-    }
-
-    .danger {
-      color: #fecaca;
-      background: #401d2a;
-      border: 1px solid #713044;
-    }
+    .secondary, .history-button { background: #1a2a45; border: 1px solid #354d70; }
+    .danger { color: #fecaca; background: #401d2a; border: 1px solid #713044; }
 
     .result-panel { scroll-margin-top: 20px; }
 
@@ -530,12 +401,7 @@
       margin-bottom: 15px;
     }
 
-    #status {
-      color: #91c5ff;
-      font-size: 12px;
-      line-height: 1.6;
-      margin: 12px 0;
-    }
+    #status { color: #91c5ff; font-size: 12px; line-height: 1.6; margin: 12px 0; }
 
     #result {
       white-space: pre-wrap;
@@ -657,25 +523,12 @@
       }
 
       .brand { margin: 0 0 12px; padding: 0 4px; }
-      .brand-icon { width: 36px; height: 36px; font-size: 20px; }
-      .brand-name { font-size: 19px; }
-      .brand small { font-size: 10px; }
+      .brand-logo { max-width: 140px; }
       .nav-label, .sidebar-bottom { display: none; }
 
-      .nav {
-        display: flex;
-        gap: 7px;
-        overflow-x: auto;
-        padding-bottom: 2px;
-      }
+      .nav { display: flex; gap: 7px; overflow-x: auto; padding-bottom: 2px; }
 
-      .nav-link {
-        flex: 0 0 auto;
-        width: auto;
-        padding: 9px 11px;
-        font-size: 12px;
-      }
-
+      .nav-link { flex: 0 0 auto; width: auto; padding: 9px 11px; font-size: 12px; }
       .nav-icon { font-size: 15px; width: auto; }
 
       .workspace { margin-left: 0; padding: 22px 15px 0; }
@@ -720,11 +573,7 @@
   <div class="app">
     <aside class="sidebar">
       <div class="brand">
-        <div class="brand-icon">✦</div>
-        <div>
-          <div class="brand-name">Faru<span>AI</span></div>
-          <small>Your AI Marketing Assistant</small>
-        </div>
+        <div class="brand-logo-text">FaruAI</div>
       </div>
 
       <div class="nav-label">WORKSPACE</div>
@@ -764,43 +613,35 @@
           <p>Let's create something amazing for your business.</p>
         </div>
         <div class="profile">
-          <div class="avatar">✦</div>
+         <div class="avatar avatar-f">F</div>
           <span class="profile-name">Your Workspace</span>
         </div>
       </header>
 
       <section class="stats" aria-label="Marketing statistics">
         <article class="stat-card">
-          <div class="stat-top">
-            <div class="stat-icon">▤</div>
-          </div>
+          <div class="stat-top"><div class="stat-icon">▤</div></div>
           <div class="stat-label">Total Generations</div>
           <div class="stat-value" id="totalStat">0</div>
           <div class="stat-note">Saved in this browser</div>
         </article>
 
         <article class="stat-card">
-          <div class="stat-top">
-            <div class="stat-icon">▣</div>
-          </div>
+          <div class="stat-top"><div class="stat-icon">▣</div></div>
           <div class="stat-label">Ad Copies Created</div>
           <div class="stat-value" id="adsStat">0</div>
           <div class="stat-note">From saved history</div>
         </article>
 
         <article class="stat-card">
-          <div class="stat-top">
-            <div class="stat-icon">⌕</div>
-          </div>
+          <div class="stat-top"><div class="stat-icon">⌕</div></div>
           <div class="stat-label">SEO Ideas Generated</div>
           <div class="stat-value" id="seoStat">0</div>
           <div class="stat-note">From saved history</div>
         </article>
 
         <article class="stat-card">
-          <div class="stat-top">
-            <div class="stat-icon">↗</div>
-          </div>
+          <div class="stat-top"><div class="stat-icon">↗</div></div>
           <div class="stat-label">Content Plans Created</div>
           <div class="stat-value" id="calendarStat">0</div>
           <div class="stat-note">From saved history</div>
@@ -815,9 +656,7 @@
             Generate marketing captions, advertising copy, SEO ideas and
             content calendars for your business — all in one place.
           </p>
-          <button class="primary" id="heroStartBtn" type="button">
-            ✦ Start Creating
-          </button>
+          <button class="primary" id="heroStartBtn" type="button">✦ Start Creating</button>
         </div>
 
         <div class="hero-art" aria-hidden="true">
@@ -866,17 +705,14 @@
         <div class="left-column">
           <section class="panel form-panel" id="generator">
             <span class="eyebrow">AI CONTENT STUDIO</span>
-            <h2 id="formTitle" style="margin-top:10px">
-              Instagram Caption Generator
-            </h2>
+            <h2 id="formTitle" style="margin-top:10px">Instagram Caption Generator</h2>
             <p class="section-description" id="formDescription">
               Create captions, hashtags and Reel ideas for your business.
             </p>
 
             <form id="marketingForm">
               <label for="business">Business name *</label>
-              <input id="business" maxlength="120"
-                placeholder="e.g. Faru Fashion" required>
+              <input id="business" maxlength="120" placeholder="e.g. Faru Fashion" required>
 
               <label for="type">Business type</label>
               <select id="type">
@@ -893,32 +729,24 @@
               <textarea id="details" maxlength="3000" rows="4"
                 placeholder="Describe your product, target audience, price or offer..."></textarea>
 
-              <button class="primary" id="generateBtn" type="submit">
-                ✦ Generate Content
-              </button>
+              <button class="primary" id="generateBtn" type="submit">✦ Generate Content</button>
             </form>
           </section>
 
           <section class="panel result-panel" id="resultPanel" hidden>
             <div class="result-toolbar">
               <h2>Your AI-Generated Content</h2>
-              <button class="secondary" id="downloadBtn" type="button" hidden>
-                ↓ Download
-              </button>
+              <button class="secondary" id="downloadBtn" type="button" hidden>↓ Download</button>
             </div>
             <p id="status" role="status" aria-live="polite"></p>
             <div id="result" aria-live="polite"></div>
-            <button id="copyBtn" class="secondary" type="button" hidden>
-              Copy Result
-            </button>
+            <button id="copyBtn" class="secondary" type="button" hidden>Copy Result</button>
           </section>
 
           <section class="panel" id="historyPanel">
             <div class="section-heading">
               <h2>◷ Chat History</h2>
-              <button type="button" id="clearHistoryBtn" class="danger">
-                Clear All
-              </button>
+              <button type="button" id="clearHistoryBtn" class="danger">Clear All</button>
             </div>
             <p class="section-description">
               View or delete your previously generated content.
@@ -934,20 +762,16 @@
             <h2>Quick Actions</h2>
             <div class="quick-actions">
               <button class="quick-action" type="button" data-goal="instagram">
-                <span class="quick-icon">✧</span>
-                New Content Idea <span class="arrow">›</span>
+                <span class="quick-icon">✧</span> New Content Idea <span class="arrow">›</span>
               </button>
               <button class="quick-action" type="button" data-goal="ads">
-                <span class="quick-icon">📣</span>
-                Write Ad Copy <span class="arrow">›</span>
+                <span class="quick-icon">📣</span> Write Ad Copy <span class="arrow">›</span>
               </button>
               <button class="quick-action" type="button" data-goal="seo">
-                <span class="quick-icon">⌕</span>
-                SEO Suggestions <span class="arrow">›</span>
+                <span class="quick-icon">⌕</span> SEO Suggestions <span class="arrow">›</span>
               </button>
               <button class="quick-action" type="button" data-goal="calendar">
-                <span class="quick-icon">▦</span>
-                Plan Content <span class="arrow">›</span>
+                <span class="quick-icon">▦</span> Plan Content <span class="arrow">›</span>
               </button>
             </div>
           </section>
@@ -972,9 +796,7 @@
         </aside>
       </div>
 
-      <footer>
-        FaruAI · AI-powered marketing assistant
-      </footer>
+      <footer>FaruAI · AI-powered marketing assistant</footer>
     </div>
   </div>
 
@@ -1012,9 +834,7 @@
 
     function getHistory() {
       try {
-        const saved = JSON.parse(
-          localStorage.getItem("faruai_history") || "[]"
-        );
+        const saved = JSON.parse(localStorage.getItem("faruai_history") || "[]");
         return Array.isArray(saved) ? saved : [];
       } catch (error) {
         return [];
@@ -1025,21 +845,15 @@
       try {
         const history = getHistory();
         history.unshift(item);
-
-        localStorage.setItem(
-          "faruai_history",
-          JSON.stringify(history.slice(0, 20))
-        );
+        localStorage.setItem("faruai_history", JSON.stringify(history.slice(0, 20)));
         displayHistory();
       } catch (error) {
-        status.textContent =
-          "Content generated, but browser history could not be saved.";
+        status.textContent = "Content generated, but browser history could not be saved.";
       }
     }
 
     function updateStats() {
       const history = getHistory();
-
       document.getElementById("totalStat").textContent = history.length;
       document.getElementById("adsStat").textContent =
         history.filter(item => item.goal === "ads").length;
@@ -1060,14 +874,12 @@
         historyList.appendChild(empty);
       }
 
-      history.forEach(function(item, index) {
+      history.forEach(function (item, index) {
         const card = document.createElement("article");
         card.className = "history-item";
 
         const title = document.createElement("h3");
-        title.textContent =
-          (item.business || "Business") + " — " +
-          (item.tool || "Marketing");
+        title.textContent = (item.business || "Business") + " — " + (item.tool || "Marketing");
 
         const date = document.createElement("p");
         date.textContent = item.date || "";
@@ -1075,8 +887,7 @@
         const preview = document.createElement("p");
         preview.className = "history-content";
         const content = item.content || "";
-        preview.textContent =
-          content.length > 180 ? content.slice(0, 180) + "..." : content;
+        preview.textContent = content.length > 180 ? content.slice(0, 180) + "..." : content;
 
         const actions = document.createElement("div");
         actions.className = "history-actions";
@@ -1086,7 +897,7 @@
         viewButton.className = "history-button";
         viewButton.textContent = "View Result";
 
-        viewButton.addEventListener("click", function() {
+        viewButton.addEventListener("click", function () {
           resultPanel.hidden = false;
           result.textContent = item.content || "";
           status.textContent = "Saved result from " + (item.date || "earlier");
@@ -1100,14 +911,10 @@
         deleteButton.className = "history-button delete-history";
         deleteButton.textContent = "Delete";
 
-        deleteButton.addEventListener("click", function() {
+        deleteButton.addEventListener("click", function () {
           const updatedHistory = getHistory();
           updatedHistory.splice(index, 1);
-
-          localStorage.setItem(
-            "faruai_history",
-            JSON.stringify(updatedHistory)
-          );
+          localStorage.setItem("faruai_history", JSON.stringify(updatedHistory));
           displayHistory();
         });
 
@@ -1126,7 +933,7 @@
         empty.textContent = "Your generated content will appear here.";
         recentActivity.appendChild(empty);
       } else {
-        history.slice(0, 4).forEach(function(item) {
+        history.slice(0, 4).forEach(function (item) {
           const row = document.createElement("div");
           row.className = "recent-item";
 
@@ -1161,27 +968,22 @@
       if (!toolInfo[goal]) return;
       selectedGoal = goal;
 
-      document.querySelectorAll(".tool").forEach(function(button) {
+      document.querySelectorAll(".tool").forEach(function (button) {
         button.classList.toggle("active", button.dataset.goal === goal);
       });
 
-      document.getElementById("formTitle").textContent =
-        toolInfo[goal].title;
-      document.getElementById("formDescription").textContent =
-        toolInfo[goal].description;
+      document.getElementById("formTitle").textContent = toolInfo[goal].title;
+      document.getElementById("formDescription").textContent = toolInfo[goal].description;
       generateBtn.textContent = "✦ Generate " +
         (goal === "instagram" ? "Content" : toolInfo[goal].title.replace(" Generator", ""));
     }
 
-    document.querySelectorAll("[data-goal]").forEach(function(button) {
-      button.addEventListener("click", function() {
+    document.querySelectorAll("[data-goal]").forEach(function (button) {
+      button.addEventListener("click", function () {
         selectTool(button.dataset.goal);
 
-        document.querySelectorAll(".nav-link").forEach(function(link) {
-          link.classList.toggle(
-            "active",
-            link.dataset.goal === selectedGoal
-          );
+        document.querySelectorAll(".nav-link").forEach(function (link) {
+          link.classList.toggle("active", link.dataset.goal === selectedGoal);
         });
 
         document.getElementById("generator").scrollIntoView({
@@ -1191,24 +993,22 @@
       });
     });
 
-    document.querySelectorAll("[data-section]").forEach(function(button) {
-      button.addEventListener("click", function() {
+    document.querySelectorAll("[data-section]").forEach(function (button) {
+      button.addEventListener("click", function () {
         const target = document.getElementById(button.dataset.section);
         if (target) target.scrollIntoView({ behavior: "smooth" });
 
-        document.querySelectorAll(".nav-link").forEach(function(link) {
+        document.querySelectorAll(".nav-link").forEach(function (link) {
           link.classList.toggle("active", link === button);
         });
       });
     });
 
-    document.getElementById("heroStartBtn").addEventListener("click", function() {
-      document.getElementById("toolsSection").scrollIntoView({
-        behavior: "smooth"
-      });
+    document.getElementById("heroStartBtn").addEventListener("click", function () {
+      document.getElementById("toolsSection").scrollIntoView({ behavior: "smooth" });
     });
 
-    form.addEventListener("submit", async function(event) {
+    form.addEventListener("submit", async function (event) {
       event.preventDefault();
 
       const business = document.getElementById("business").value.trim();
@@ -1263,10 +1063,8 @@
           date: new Date().toLocaleString(),
           content: generatedContent
         });
-
       } catch (error) {
-        result.textContent = error.message ||
-          "Something went wrong. Please try again.";
+        result.textContent = error.message || "Something went wrong. Please try again.";
         status.textContent = "Generation failed. Please try again.";
       } finally {
         generateBtn.disabled = false;
@@ -1274,21 +1072,17 @@
       }
     });
 
-    copyBtn.addEventListener("click", async function() {
+    copyBtn.addEventListener("click", async function () {
       try {
         await navigator.clipboard.writeText(result.textContent);
         copyBtn.textContent = "✓ Copied Successfully!";
       } catch (error) {
-        status.textContent =
-          "Copy failed. Please select the result text and copy it manually.";
+        status.textContent = "Copy failed. Please select the result text and copy it manually.";
       }
     });
 
-    downloadBtn.addEventListener("click", function() {
-      const blob = new Blob([result.textContent], {
-        type: "text/plain;charset=utf-8"
-      });
-
+    downloadBtn.addEventListener("click", function () {
+      const blob = new Blob([result.textContent], { type: "text/plain;charset=utf-8" });
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
@@ -1299,7 +1093,7 @@
       URL.revokeObjectURL(url);
     });
 
-    clearHistoryBtn.addEventListener("click", function() {
+    clearHistoryBtn.addEventListener("click", function () {
       if (confirm("History ellathayum delete pannava?")) {
         localStorage.removeItem("faruai_history");
         displayHistory();
