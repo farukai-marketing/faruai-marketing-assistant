@@ -1,22 +1,17 @@
-
 # FaruAI — AI Marketing Assistant
-## 🚀 Live Demo
 
-[Open FaruAI Website](https://faruai-marketing-assistant.onrender.com)
-
-FaruAI is an AI-powered digital marketing assistant that helps businesses generate marketing content quickly using Google's Gemini API.
+FaruAI is an AI-powered marketing assistant designed to help businesses create marketing content faster using artificial intelligence.
 
 ## Features
-## 📸 Project Preview
 
-![FaruAI Dashboard](Screenshot%20(74).png)
-
-- **Instagram Caption Generator** — Create captions, hashtags, and Reel ideas.
-- **Ad Copy Generator** — Generate headlines, ad text, calls to action, and audience suggestions.
-- **7-Day Content Calendar** — Plan a week of social media content.
-- **SEO Assistant** — Generate keyword ideas, SEO titles, meta descriptions, and content ideas.
-- **Copy Results** — Copy generated content for reuse.
-- **Chat History** — Save and revisit previous generations.
+- **Instagram Caption Generator** — Generate marketing captions for your business.
+- **Ad Copy Generator** — Create advertising copy for marketing campaigns.
+- **SEO Assistant** — Generate SEO ideas for your business.
+- **7-Day Content Calendar** — Plan content ideas for the next seven days.
+- **Chat History** — Review previously generated results.
+- **Copy Results** — Copy generated marketing content.
+- **Download Results** — Save generated content.
+- **Responsive Dashboard** — Access the dashboard on supported desktop and mobile screens.
 
 ## Tech Stack
 
@@ -27,38 +22,52 @@ FaruAI is an AI-powered digital marketing assistant that helps businesses genera
 - Express.js
 - Google Gemini API
 
-## Run Locally
+## Live Demo
 
-1. Install Node.js.
-2. Clone this repository.
+[Open FaruAI Marketing Assistant](https://faruai-marketing-assistant.onrender.com)
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm
+- A valid Google Gemini API key
+
+### Installation
+
+1. Clone this repository:
+
+   `git clone https://github.com/farukai-marketing/faruai-marketing-assistant.git`
+
+2. Open the project folder:
+
+   `cd faruai-marketing-assistant`
+
 3. Install dependencies:
 
-   ```bash
-   npm install
-   ```
+   `npm install`
 
-4. Create a `.env` file in the project root:
+4. Create a `.env` file in the project root and add your API key:
 
-   ```env
-   GEMINI_API_KEY=your_gemini_api_key
-   ```
+   `GEMINI_API_KEY=your_api_key_here`
 
-5. Start the server:
+5. Start the application:
 
-   ```bash
-   npm start
-   ```
+   `npm start`
 
 6. Open `http://localhost:3000` in your browser.
 
-## Environment Variables
+## Security
 
-- `GEMINI_API_KEY` — Your Google Gemini API key. Keep it private and never commit it to GitHub.
+- Keep API keys in environment variables.
+- Never commit the `.env` file to GitHub.
+- Keep `.env` listed in `.gitignore`.
+- Configure the API key securely in your deployment environment.
 
-## Project Purpose
+## Project Goal
 
-This project demonstrates an AI-assisted marketing workflow using a web interface, a Node.js backend, and the Gemini API.
+FaruAI is a learning project focused on combining AI and digital marketing to make marketing content creation more accessible and efficient.
 
 ## Author
 
-Created as a digital marketing and AI development project.
+Created as an AI and digital marketing learning project.
